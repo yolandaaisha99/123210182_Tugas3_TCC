@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notes App</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Sora:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="app-wrapper">
+  <header class="app-header">
+    <div class="header-accent"></div>
+    <h1><span>Notes</span></h1>
+    <p class="subtitle">Catat, simpan, kelola idemu</p>
+  </header>
+
+  <div class="form-card" id="formCard">
+    <div class="form-label" id="formLabel">✦ Catatan Baru</div>
+    <input type="hidden" id="editId">
+    <input type="text" id="judul" placeholder="Judul catatan..." autocomplete="off">
+    <textarea id="isi" placeholder="Tulis isi catatan di sini..."></textarea>
+    <div class="btn-group">
+      <button class="btn-primary" onclick="addNote()" id="submitBtn">
+        <span>Simpan</span>
+      </button>
+      <button class="btn-cancel" onclick="cancelEdit()" id="cancelBtn" style="display:none;">
+        Batal
+      </button>
+    </div>
+  </div>
+
+  <div class="notes-section">
+    <div class="section-header">
+      <span class="section-title">Daftar Catatan</span>
+      <span class="note-count" id="noteCount">0 catatan</span>
+    </div>
+    <div id="notesList" class="notes-grid"></div>
+    <div id="emptyState" class="empty-state" style="display:none;">
+      <div class="empty-icon">📝</div>
+      <p>Belum ada catatan. Buat catatan pertamamu!</p>
+    </div>
+  </div>
+</div>
+
+<div id="toast" class="toast"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
