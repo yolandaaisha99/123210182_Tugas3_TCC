@@ -1,0 +1,14 @@
+runtime: python39
+
+service: backend
+
+env_variables:
+  DB_HOST: "34.172.113.167"
+  DB_USER: "admin"
+  DB_PASS: "mypassword"
+  DB_NAME: "notes_123210182"
+  PORT: "8080"
+
+automatic_scaling:
+  min_instances: 0
+  max_instances: 2
